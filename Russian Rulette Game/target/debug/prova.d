@@ -1,1 +1,1 @@
-/home/mattia/Programming/prova/target/debug/prova: /home/mattia/Programming/prova/src/main.rs
+/home/mattia/Programming/Russian\ Rulette\ Game/target/debug/prova: /home/mattia/Programming/Russian\ Rulette\ Game/src/main.rs

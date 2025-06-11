@@ -4,7 +4,7 @@ use rand::Rng;
 
 fn main() {
 
-    println!("Welcome to Russian Rulette game, please insert how many bullet you want load from 1 to 9. More bullet more danger!");
+    println!("Welcome to Russian Rulette game, please insert how many bullets you want load from 1 to 9. More bullets more danger!");
     
     // Creation bullet and loop until valid input
     let bullet: u8 = loop {
@@ -13,18 +13,15 @@ fn main() {
         
         match input.trim().parse::<u8>() {
             Ok(num) if num >=1 && num <= 9 => break num,
-            _ => println!("Please enter a valid number of bullets (0-9)."),
+            _ => println!("Please enter a valid number of bullets (1-9)."),
         }
     };
 
-    println!("You have a gun of 10 chamber an you load {} bullets!", bullet);
-
-    // Create a gun with 10 chambers, all initially empty
-    let gun: [u8; 10] = [0; 10];
+    println!("You have a gun of 10 chambers an you load {} bullets!", bullet);
 
     // Randomly select a chamber to load bullets
-    let mut loaded_gun = gun;
-    let mut rng = rand::rng();
+    let mut loaded_gun = [0u8; 10]; // 0 means empty, 1 means loaded
+    let mut rng =  rand::rng();
     let mut loaded = 0;
     
     while loaded < bullet {
